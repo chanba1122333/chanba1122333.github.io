@@ -216,7 +216,7 @@ The example can be previewed from
 
 This work is open sourced under the Apache License, Version 2.0.
 
-Copyright 2019 Tao He.
+Copyright 2019 Tao He .
 
 [1]: https://pages.github.com
 [2]: https://pages.github.com/themes
