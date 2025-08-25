@@ -31,9 +31,9 @@
             <a href="{{site.baseurl}}/assets/search.html">Click to Search</a>
         </div>
         <ul class="summary">
-            <!-- 백준 카테고리 트리 시작 -->
+            <!-- 백준 트리 메뉴 -->
             <li class="chapter" data-level="baekjoon">
-                <span style="font-weight:bold;">백준</span>
+                <a href="{{site.baseurl}}/baekjoon/">백준</a>
                 <ul>
                 {% assign baekjoon_posts = site.categories.백준 | where_exp: "post", "post.date" %}
                 {% assign baekjoon_posts = baekjoon_posts | sort: "date" | reverse %}
