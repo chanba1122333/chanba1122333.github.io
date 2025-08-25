@@ -35,7 +35,8 @@
             <li class="chapter" data-level="baekjoon">
                 <span style="font-weight:bold;">백준</span>
                 <ul>
-                {% assign baekjoon_posts = site.categories.백준 | sort: 'date' | reverse %}
+                {% assign baekjoon_posts = site.categories.백준 | where_exp: "post", "post.date" %}
+                {% assign baekjoon_posts = baekjoon_posts | sort: "date" | reverse %}
                 {% for post in baekjoon_posts %}
                     <li class="chapter" data-path="{{site.baseurl}}{{post.url}}">
                         <a href="{{site.baseurl}}{{post.url}}" onclick="pageScrollToTop(this)">
