@@ -31,21 +31,6 @@
             <a href="{{site.baseurl}}/assets/search.html">Click to Search</a>
         </div>
         <ul class="summary">
-            <!-- 백준 트리 메뉴 -->
-            <li class="chapter" data-level="baekjoon">
-                <a href="{{site.baseurl}}/baekjoon/">백준</a>
-                <ul>
-                {% assign baekjoon_posts = site.categories.백준 | where_exp: "post", "post.date" %}
-                {% assign baekjoon_posts = baekjoon_posts | sort: "date" | reverse %}
-                {% for post in baekjoon_posts %}
-                    <li class="chapter" data-path="{{site.baseurl}}{{post.url}}">
-                        <a href="{{site.baseurl}}{{post.url}}" onclick="pageScrollToTop(this)">
-                            {{ post.title | escape }}
-                        </a>
-                    </li>
-                {% endfor %}
-                </ul>
-            </li>
             <li class="divider"></li>
             {% if page.url == "/index.html" or page.url == "/" %}
             <li class="chapter active" data-level="1.1" data-path="{{site.baseurl}}">
