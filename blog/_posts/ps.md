@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "1016번: 제곱ㄴㄴ수 (Cpp)"
+title: "백준"
 date: 2025-08-25 01:25:00 +0900
-categories: [백준]
+categories: [ps]
 tags: [백준, 알고리즘, Cpp, 제곱ㄴㄴ수, 1016번, 문제풀이]
 ---
 
@@ -10,7 +10,7 @@ tags: [백준, 알고리즘, Cpp, 제곱ㄴㄴ수, 1016번, 문제풀이]
 
 [문제 링크](https://www.acmicpc.net/problem/1016)
 
-### 코드
+ 코드
 
 ```cpp
 # 백준 1016번: 제곱ㄴㄴ수
@@ -60,6 +60,49 @@ int main(void)
 
     cout << sqrssnum_count << '\n';
 
+    return 0;
+}
+```
+---
+
+## 백준 1436번: 영화감독 숌
+
+[문제 링크](https://www.acmicpc.net/problem/1436)
+
+코드
+
+```cpp
+# 백준 1436번: 영화감독 숌 
+
+#include <bits/stdc++.h>
+
+using namespace std;
+typedef long long ll;
+
+int main(void)
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll n;
+    cin >> n;
+    ll count = 0;
+    ll num = 666;
+    while (1)
+    {
+        string s = to_string(num);
+        if (s.find("666") != string::npos)
+        {
+            count++;
+        }
+        if (count == n)
+        {
+            cout << num << '\n';
+            break;
+        }
+
+        num++;
+    }
     return 0;
 }
 ```
