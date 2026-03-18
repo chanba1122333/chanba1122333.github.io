@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>백준 1016: 제곱ㄴㄴ수 - Chan's Space</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="sub-page">
+    <a href="index.html" class="back-link">&larr; Back to Baekjoon List</a>
+    
+    <h1 class="section-title">백준 1016: 제곱ㄴㄴ수</h1>
+    
+    <div class="problem-info" style="margin-bottom: 2rem;">
+        <p><a href="https://www.acmicpc.net/problem/1016" target="_blank" style="color: var(--accent); font-weight: 500;">문제 링크 (https://www.acmicpc.net/problem/1016)</a></p>
+    </div>
+
+    <h3>코드 (C++)</h3>
+    <pre style="background: var(--surface); padding: 1.5rem; border: 1px solid var(--border); border-radius: 8px; overflow-x: auto;"><code style="font-family: monospace; font-size: 0.95rem;">#include &lt;bits/stdc++.h&gt;
+
+using namespace std;
+typedef long long ll;
+#define FOR(i, a, A) for (ll i = a; i &lt; A; ++i)
+
+int main(void)
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll min, max;
+    cin &gt;&gt; min &gt;&gt; max;
+    ll range = max - min + 1;
+    bool sqrssnum[range];
+    FOR(i, 0, range)
+    {
+        sqrssnum[i] = false;
+    }
+    for (ll i = 2; i * i &lt;= max; ++i)
+    {
+        ll square = i * i;
+        ll wtm = (min + square - 1) / square;
+        ll cs = wtm * square;
+        for (ll num = cs; num &lt;= max; num += square)
+        {
+            ll index = num - min;
+            if (index &gt;= 0 && index &lt; range)
+            {
+                sqrssnum[index] = true;
+            }
+        }
+    }
+
+    ll sqrssnum_count = 0;
+    FOR(i, 0, range)
+    {
+        if (!sqrssnum[i])
+        {
+            sqrssnum_count++;
+        }
+    }
+
+    cout &lt;&lt; sqrssnum_count &lt;&lt; '\n';
+
+    return 0;
+}</code></pre>
+
+    <hr style="margin: 4rem 0 2rem; border: none; border-top: 1px solid var(--border);">
+    
+    <!-- User requested Comments Section -->
+    <h2 style="margin-bottom: 1rem;">Comments & Discussions</h2>
+    <div class="giscus"></div>
+    <script src="https://giscus.app/client.js"
+        data-repo="chanba1122333/chanba1122333.github.io"
+        data-repo-id="R_kgDONXz_Yw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDONXz_Y84Ck3fP"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="ko"
+        crossorigin="anonymous"
+        async>
+    </script>
+</body>
+</html>
